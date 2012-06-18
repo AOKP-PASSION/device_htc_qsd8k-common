@@ -16,5 +16,5 @@
 
 <resources>
     <!-- Set this to false for yaffs2 devices -->
-    <bool name="filesystem_is_encryptable">false</bool>
+    <!--<bool name="filesystem_is_encryptable">false</bool> -->
 </resources>
