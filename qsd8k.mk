@@ -24,6 +24,10 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/htc/qsd8k-common/overlay
 
+# Prebuilt
+PRODUCT_COPY_FILES += \
+    device/htc/qsd8k-common/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
+
 #
 # Required Packages
 #
@@ -88,6 +92,15 @@ include frameworks/base/build/phone-hdpi-512-dalvik-heap.mk
 
 # We have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+#
+# Camera (video recording)
+#
+
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.camcorder.disablemeta=1 \
+    rw.media.record.hasb=0
 
 #
 # Wifi
